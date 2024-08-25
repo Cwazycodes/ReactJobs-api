@@ -4,6 +4,7 @@ const Job = require('./models/jobModel');
 
 const jobs = [
     {
+      "id": 1,
         "title": "Full-Stack Developer",
         "type": "Full-Time",
         "description": "We are seeking a Full-Stack Developer to join our dynamic team in London. You will be working on cutting-edge web applications.",
@@ -17,6 +18,7 @@ const jobs = [
         }
       },
       {
+        'id': 2,
         "title": "Data Scientist",
         "type": "Full-Time",
         "description": "Join our analytics team as a Data Scientist. You'll work with big data to generate actionable insights.",
@@ -30,6 +32,7 @@ const jobs = [
         }
       },
       {
+        'id':3,
         "title": "Product Manager",
         "type": "Full-Time",
         "description": "We are looking for an experienced Product Manager to lead the development of our flagship software product.",
@@ -43,6 +46,7 @@ const jobs = [
         }
       },
       {
+        "id": 4,
         "title": "UX/UI Designer",
         "type": "Full-Time",
         "description": "We are seeking a creative UX/UI Designer to craft user-friendly interfaces for our web and mobile applications.",
@@ -56,6 +60,7 @@ const jobs = [
         }
       },
       {
+        "id":5,
         "title": "DevOps Engineer",
         "type": "Full-Time",
         "description": "Join our team as a DevOps Engineer and help us streamline our development processes and infrastructure.",
@@ -69,6 +74,7 @@ const jobs = [
         }
       },
       {
+        "id":6,
         "title": "Cybersecurity Analyst",
         "type": "Full-Time",
         "description": "We are looking for a Cybersecurity Analyst to protect our systems from cyber threats.",
@@ -82,6 +88,7 @@ const jobs = [
         }
       },
       {
+        "id":7,
         "title": "Marketing Specialist",
         "type": "Full-Time",
         "description": "We're hiring a Marketing Specialist to lead our online and offline marketing campaigns.",
@@ -95,6 +102,7 @@ const jobs = [
         }
       },
       {
+        "id":8,
         "title": "Software Engineer",
         "type": "Full-Time",
         "description": "We are looking for a Software Engineer to join our team in Sheffield. Work on exciting projects with a talented team.",
