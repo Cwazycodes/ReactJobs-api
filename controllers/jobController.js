@@ -40,4 +40,13 @@ const deleteJob = async (req, res) => {
   }
 };
 
-module.exports = { addJob, getJobs, updateJob, deleteJob };
+const getJobById = async (id) => {
+  try {
+    const job = await Job.findById(id);
+    return job;
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = { addJob, getJobs, updateJob, deleteJob, getJobById };
