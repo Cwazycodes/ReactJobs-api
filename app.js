@@ -9,14 +9,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const jobRoutes = require("./routes/jobRoutes");
 
-const corsOptions = {
-  origin: "http://localhost:3000",
-  methods: "GET,POST,PUT,DELETE",
-  allowedHeaders: "Content-Type",
-};
 
 const app = express();
-app.use(cors(corsOptions));
+app.use();
 app.use(express.json());
 
 app.use("/api", jobRoutes);
