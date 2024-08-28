@@ -1,7 +1,7 @@
-if (process.env.NODE_env === 'test') {
-    require('dotenv').config({ path: '.env.test'})
+if (process.env.NODE_env === "test") {
+  require("dotenv").config({ path: ".env.test" });
 } else {
-    require('dotenv').config()
+  require("dotenv").config();
 }
 
 const express = require("express");
@@ -9,8 +9,14 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const jobRoutes = require("./routes/jobRoutes");
 
+const corsOptions = {
+  origin: "http://localhost:3000",
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type",
+};
+
 const app = express();
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/api", jobRoutes);
