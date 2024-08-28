@@ -13,7 +13,7 @@ router.get("/jobs", getJobs);
 router.get("/jobs/:id", async (req, res) => {
   try {
     const jobId = req.params.id;
-    const job = await getJobsById(jobId);
+    const job = await getJobById(jobId);
     if (!job) {
       return res.status(404).json({ message: "Job not found" });
     }
