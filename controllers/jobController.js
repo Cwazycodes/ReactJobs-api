@@ -22,7 +22,13 @@ const getJobs = async (req, res) => {
 
 const updateJob = async (req, res) => {
   try {
-    const job = await Job.findByIdAndUpdate(req.params.id, req.body, {
+    const jobId = req.params.id;
+
+    if (!ObjectId.isValid(jobId)) {
+      return res.status(400).json({ error: "Invalid job ID format" });
+    }
+
+    const job = await Job.findByIdAndUpdate(jobId, req.body, {
       new: true,
     });
     if (!job) return res.status(404).json({ error: "Job not found" });
@@ -34,7 +40,13 @@ const updateJob = async (req, res) => {
 
 const deleteJob = async (req, res) => {
   try {
-    const job = await Job.findByIdAndDelete(req.params.id);
+    const jobId = req.params.id;
+
+    if (!ObjectId.isValid(jobId)) {
+      return res.status(400).json({ error: "Invalid job ID format" });
+    }
+
+    const job = await Job.findByIdAndDelete(jobId);
     if (!job) return res.status(404).json({ error: "Job not found" });
     res.status(200).json({ message: "Job deleted" });
   } catch (err) {
@@ -43,6 +55,10 @@ const deleteJob = async (req, res) => {
 };
 
 const getJobById = async (id) => {
+  if (!ObjectId.isValid(id)) {
+    throw new Error("Invalid job ID format");
+  }
+
   try {
     const job = await Job.findById(ObjectId(id));
     return job;
