@@ -1,4 +1,6 @@
 const Job = require("../models/jobModel");
+const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Types;
 
 const addJob = async (req, res) => {
   try {
@@ -42,7 +44,7 @@ const deleteJob = async (req, res) => {
 
 const getJobById = async (id) => {
   try {
-    const job = await Job.findById(id);
+    const job = await Job.findById(ObjectId(id));
     return job;
   } catch (error) {
     throw error;
